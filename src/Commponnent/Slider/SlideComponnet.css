@@ -1,0 +1,18 @@
+.swiper-button-next, .swiper-button-prev{
+  
+   width: 2rem !important;
+   height: 2rem !important;
+   border-radius: 50% !important;
+
+   /* background-color: rgba(0, 0, 0, 0.86) !important; */
+   transition: all .5s !important;
+   /* margin-bottom: 5rem !important; */
+
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+    
+    font-size: 1.7rem !important;
+     font-weight: 600 !important;    
+    /* margin-bottom: 2rem !important; */
+}

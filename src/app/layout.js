@@ -1,5 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
+import Header from "../Commponnent/Header";
+import Footer from "../Commponnent/Footer";
+import { MovieContextProvider } from "@/contextAPI/ContextAPI/MovieContext";
+import { TVContextProvider } from "@/contextAPI/ContextAPI/TvContext";
+import { TrendingContextProvider } from "@/contextAPI/ContextAPI/TrendingContext";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +18,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <MovieContextProvider>
+      <TVContextProvider>
+        {/* <TrendingContextProvider> */}
+          <html lang="en">
+            <body className={inter.className}>
+              <Header />
+              {children}
+              <Footer />
+            </body>
+          </html>
+        {/* </TrendingContextProvider> */}
+      </TVContextProvider>
+    </MovieContextProvider>
+
   );
 }
