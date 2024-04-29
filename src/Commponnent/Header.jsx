@@ -47,10 +47,11 @@ const Header = () => {
       {/* LINKS Movies And TV  */}
       <div className={`navLinks transition-all bg-secandry md:bg-transparent md:static absolute  top-[47px]  md:py-0 pt-[1rem] md:w-fit w-[100%]`}>
         <ul className='md:flex md:flex-row flex flex-col items-center'>
-          {navLinks.map((navItem, key) => <li className={` transition-all w-[100%] border-b-[.1px] border-primary md:border-none 
+          {navLinks.map((navItem, key) => <Link onClick={chengeToggleMenu} className={navItem.name} href={navItem.display}> 
+          <li className={` transition-all w-[24rem] md:w-[100%] border-b-[.1px] border-primary md:border-none 
           p-[.7rem] font-semibold hover:text-hover`} key={key}>
-            <Link onClick={chengeToggleMenu} className={navItem.name} href={navItem.display}>{navItem.name}</Link>
-          </li>)}
+            {navItem.name}
+          </li></Link>)}
         </ul>
       </div>
       {/* sign in button */}

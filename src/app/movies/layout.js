@@ -1,5 +1,6 @@
 import React from 'react'
 import NavigationTypeMovie from './NavigationTypeMovie'
+import Pagination from '@/Commponnent/Pagination'
 
 const typeMovies = [
     { name: 'Now Playing', router: 'now_playing' },
@@ -13,6 +14,7 @@ function layout({ children }) {
              {/* navigation */}
             <NavigationTypeMovie typeMovies={typeMovies} />
             {children}
+            <Pagination/>
         </div>
     )
 }
