@@ -15,7 +15,7 @@ function DataContent({ data }) {
             <p className='description font-extralight w-[22rem] text-[.9rem] py-2 '>{data.overview || data.biography}</p>
             {/* rate */}
            {data.vote_avarage? <div className="rate my-3 flex items-center gap-2 pt-[.8rem]">
-                {mapStar.map(el => <> <FaStar className='text-primary' />
+                {mapStar.map((el,key) => <> <FaStar key={key} className='text-primary' />
                 </>)}
                 <span className='rate border border-primary px-[2px]
                  font-bold border-solid text-[.7rem] '>{(data.vote_average / 2).toFixed(1)}
@@ -24,7 +24,7 @@ function DataContent({ data }) {
 
             {/* type movie */}
             <div className="typeMovie flex flex-wrap gap-1">
-                {data.genres?.map((genre) => <h3 className=' border-primary mt-1 text-[.8rem] md:text-[.6rem] tracking-[1px] p-2 border-t-[.2rem]
+                {data.genres?.map((genre,key) => <h3 key={key} className=' border-primary mt-1 text-[.8rem] md:text-[.6rem] tracking-[1px] p-2 border-t-[.2rem]
                  rounded-lg shadow-md bg-[rgba(17,17,17,0.77)] text-white font-semibold '>{genre.name}</h3>)}
             </div>
 

@@ -33,7 +33,7 @@ function Slider({ data }) {
                 modules={[FreeMode, Navigation]}
                 className="mySwiper"
             >
-                {data.map((movie, key) => <SwiperSlide ><Link href={`/details/${movie.media_type}/${movie.id}`}><MovieCard movie={movie} key={key} /></Link></SwiperSlide>)}
+                {data.map((movie, key) => <SwiperSlide key={key} ><Link key={key} href={`/details/${movie.media_type}/${movie.id}`}><MovieCard movie={movie} key={key} /></Link></SwiperSlide>)}
 
             </Swiper>
         </div>

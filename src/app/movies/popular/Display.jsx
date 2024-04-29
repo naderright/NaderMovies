@@ -7,7 +7,7 @@ function Display({movies}) {
   return (
     <div>
       <div className="displayMovies grid grid-cols-2 md:grid-cols-4 gap-4">
-        {movies.map((movie)=><Link  href={`/details/movie/${movie.id}`}><MovieCard movie={movie}/></Link>)}
+        {movies.map((movie,key)=><Link  key={key} href={`/details/movie/${movie.id}`}><MovieCard movie={movie}/></Link>)}
       </div>
     </div>
   )

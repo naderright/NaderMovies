@@ -28,7 +28,7 @@ function MovieCard({ movie, key }) {
         </div>
         {/* type movies */}
         <div className="typeMovie flex flex-wrap gap-1">
-          {typeMovie.map((type) => <h3 className='text-primary font-semibold border-primary text-[.8rem] border-b-[.03rem] '>{type}</h3>)}
+          {typeMovie.map((type,key) => <h3 key={key} className='text-primary font-semibold border-primary text-[.8rem] border-b-[.03rem] '>{type}</h3>)}
         </div>
 
       </div>
