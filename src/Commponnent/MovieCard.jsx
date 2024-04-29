@@ -1,20 +1,22 @@
-import { getGenreNames, startLinkImag } from '@/contextAPI/getOptions'
+import { getGenreNames, startLinkImag } from '@/contextAPI/constances'
 import Image from 'next/image'
 import React from 'react'
 import { FiPlayCircle } from "react-icons/fi";
-
+import profileImage from '../../public/profile.jpg'
 
 function MovieCard({ movie, key }) {
 
   const typeMovie = getGenreNames(movie)
-
+  // console.log(key);
   return (
     <div className='pt-1 ' key={key} >
       <div className="MovieCard bg-white   	" >
         <div className="group transition-all relative">
-          <Image className='w-[100%] h-[100%]  hover:cursor-pointer' width={100} height={100} priority src={movie.poster_path ? startLinkImag + movie.poster_path : startLinkImag + movie.profile_path} alt={movie.name || movie.title} />
-          <div className="layerCard flex items-center duration-700 justify-center overflow-hidden absolute bg-[rgba(0,0,0,0.47)] transition-all top-[100%] group-hover:top-0 bottom-0 right-0 left-0">
-            <FiPlayCircle  className='text-[3rem]'/>
+          <Image className='w-[100%] h-[100%]  hover:cursor-pointer' width={100} height={100} priority src={movie.poster_path ? startLinkImag + movie.poster_path : movie.profile_path ? startLinkImag + movie.profile_path : profileImage} alt={movie.name || movie.title} />
+          {/* layout Card */}
+          <div className="layerCard text-primary hover:cursor-pointer flex items-center duration-700 justify-center overflow-hidden absolute
+           bg-[rgba(0,0,0,0.47)] transition-all top-[100%] group-hover:top-0 bottom-0 right-0 left-0">
+            <FiPlayCircle className='text-[3rem]' />
           </div>
         </div>
         <div className="titleMovie py-1 text-stone-950 font-[700] flex itmes-center justify-between gap-2">
@@ -24,8 +26,9 @@ function MovieCard({ movie, key }) {
               : ''}
           </div>
         </div>
-        <div className="typeMovie flex gap-1">
-          {typeMovie.map((type) => <h3 className='text-primary border-primary text-[.7rem] border-b-[.03rem] '>{type}</h3>)}
+        {/* type movies */}
+        <div className="typeMovie flex flex-wrap gap-1">
+          {typeMovie.map((type) => <h3 className='text-primary font-semibold border-primary text-[.8rem] border-b-[.03rem] '>{type}</h3>)}
         </div>
 
       </div>

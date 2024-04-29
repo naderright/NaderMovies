@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { BsList } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
@@ -19,25 +19,24 @@ const navLinks = [
 const Header = () => {
   const [toggle, setToggle] = useState('open');
   const [sticky, setSticky] = useState(false);
-  const [params, setParams] = useState(false);
-   const getParams = useParams();
-   console.log(getParams ); 
+  const getPathName = usePathname();
+
+  // console.log(getPathName.length);
   const chengeToggleMenu = () => {
-          
+
     toggle == 'open' ? setToggle('close') : setToggle('open')
   }
   useEffect(() => {
-         getParams?setParams(true):setParams(false)
-      window.addEventListener('scroll', () => {
-        window.scrollY > 20 ? setSticky(true) : setSticky(false);
-      })
-   return ()=> window.removeEventListener('scroll', () => {
-    window.scrollY > 20 ? setSticky(true) : setSticky(false);
-  })
-  
-  }, [sticky,getParams])
+    window.addEventListener('scroll', () => {
+      window.scrollY > 20 ? setSticky(true) : setSticky(false);
+    })
+    return () => window.removeEventListener('scroll', () => {
+      window.scrollY > 20 ? setSticky(true) : setSticky(false);
+    })
+
+  }, [sticky])
   return (
-    <header className={`${toggle == 'open' ? 'overflow-hidden' : ''} ${sticky? 'bg-secandry' :'bg-transparent'} transition-all 
+    <header className={`${toggle == 'open' ? 'overflow-hidden' : ''} ${sticky || getPathName.length>1 ? 'bg-secandry' : 'bg-transparent'}  transition-all 
     z-50 shadow-md fixed bor w-[100%]  flex justify-around items-center  text-white h-[3rem]`}>
       <div className={`logo text-primary font-black text-[1.2rem]`}>
         <Link href={'/'}>

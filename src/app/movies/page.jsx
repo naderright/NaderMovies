@@ -1,9 +1,18 @@
 import React from 'react'
+import NowPlayingMovies from './now_playing/page'
 
-const Movies = () => {
+const Movies = async () => {
+  
+  // const changeDisplayType = (type)=>{
+  //          setDisplayType(type)
+  // }
+  // console.log(Movies);
   return (
-    <div>
-      Movies
+    <div className='Movies '>
+     
+      {/* display movies */}
+      <NowPlayingMovies/>
+
     </div>
   )
 }

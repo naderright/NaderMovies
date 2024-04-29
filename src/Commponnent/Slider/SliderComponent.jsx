@@ -26,14 +26,14 @@ function Slider({ data }) {
         <div>
             {/* {console.log( 'dat'+ data)} */}
             <Swiper
-                slidesPerView={screnView < 500 ? 2 : screnView < 768 ? 3 : 4}
+                slidesPerView={screnView < 600 ? 2 : screnView < 805 ? 3 : 4}
                 spaceBetween={10}
                 freeMode={true}
                 navigation
                 modules={[FreeMode, Navigation]}
                 className="mySwiper"
             >
-                {data.map((movie, key) => <SwiperSlide ><Link href={`/details/${movie.id}`}><MovieCard movie={movie} key={key} /></Link></SwiperSlide>)}
+                {data.map((movie, key) => <SwiperSlide ><Link href={`/details/${movie.media_type}/${movie.id}`}><MovieCard movie={movie} key={key} /></Link></SwiperSlide>)}
 
             </Swiper>
         </div>

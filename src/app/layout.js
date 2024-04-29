@@ -3,9 +3,7 @@ import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Commponnent/Header";
 import Footer from "../Commponnent/Footer";
-import { MovieContextProvider } from "@/contextAPI/ContextAPI/MovieContext";
-import { TVContextProvider } from "@/contextAPI/ContextAPI/TvContext";
-import { TrendingContextProvider } from "@/contextAPI/ContextAPI/TrendingContext";
+
 
 
 
@@ -18,9 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <MovieContextProvider>
-      <TVContextProvider>
-        {/* <TrendingContextProvider> */}
+    
           <html lang="en">
             <body className={inter.className}>
               <Header />
@@ -28,9 +24,8 @@ export default function RootLayout({ children }) {
               <Footer />
             </body>
           </html>
-        {/* </TrendingContextProvider> */}
-      </TVContextProvider>
-    </MovieContextProvider>
+        
+     
 
   );
 }

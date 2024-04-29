@@ -1,31 +1,17 @@
-'use client'
+'use server'
 import axios from "axios";
-import { createContext,  useEffect,  useState } from "react"
-import {  getOptions } from "../getOptions";
+import { getOptions } from "../constances";
 
-export const MovieContext = createContext([]);
 
-export const MovieContextProvider = (props) => {
+export const getAllMovies = async (type,page) => {
 
-    const [nowPlaying, setNowPlaying] = useState([]);
-    const [upcoming, setUpcoming] = useState([]);
-    const [popular, setPopular] = useState([]);
-    const [topRated, setTopRated] = useState([]);
-
-      const getMovie = async(type,calback,page='1')=>{
+    try {
         const url = `https://api.themoviedb.org/3/movie/${type}?language=en-US&page=${page}`;
-        const {data} = await axios(url,getOptions);
-        calback(data.results);
-        
-      }
-    //   useEffect(()=>{
-    //     getMovie('now_playing',setNowPlaying,'2')
-    //   },[])
+        const { data } = await axios(url, getOptions);
+        return data.results
+    } catch (error) {
+        console.log(error);
+    }
 
-    return <MovieContext.Provider value={{
-        getMovie,setNowPlaying, setUpcoming, setPopular
-        , setTopRated, nowPlaying, upcoming, popular, topRated
-    }}>
-        {props.children}
-    </MovieContext.Provider>
+
 }
