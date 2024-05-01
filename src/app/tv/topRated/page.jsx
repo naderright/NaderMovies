@@ -1,9 +1,12 @@
 import React from 'react'
 import Display from './Display'
 import { getAllTV } from '@/contextAPI/ContextAPI/TvContext'
+import { useSearchParams } from 'next/navigation';
 
 async function TopRated() {
-    const Movies = await getAllTV('top_rated', 1)
+  const page = useSearchParams().get('page'); 
+
+    const Movies = await getAllTV('top_rated', !page?1:page)
 
   return (
     <div>

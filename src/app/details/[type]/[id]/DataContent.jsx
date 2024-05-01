@@ -8,7 +8,7 @@ function DataContent({ data }) {
 
 
 
-    console.log(data);
+    // console.log(data);
     return (
         <div className='contentDetails text-secandry'>
             <h3 className='font-bold text-[1.3rem]'>{data.title || data.name}</h3>

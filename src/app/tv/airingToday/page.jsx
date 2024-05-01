@@ -1,9 +1,12 @@
 import { getAllTV } from '@/contextAPI/ContextAPI/TvContext'
 import React from 'react'
 import Display from './Display'
+import { useSearchParams } from 'next/navigation';
 
 async function AiringToday() {
-    const Movies = await getAllTV('airing_today', 1)
+  const page = useSearchParams().get('page'); 
+
+    const Movies = await getAllTV('airing_today', !page?1:page)
 
   return (
     <div>

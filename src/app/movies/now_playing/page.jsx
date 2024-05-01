@@ -1,10 +1,13 @@
 import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext'
 import React from 'react'
 import Display from './Display'
+import { useSearchParams } from 'next/navigation';
 
 async function NowPlayingMovies() {
-    const Movies = await getAllMovies('now_playing', 1)
+    const page = useSearchParams().get('page'); 
 
+    const Movies = await getAllMovies('now_playing', !page?1:page)
+    // console.log(NumberPage);
     return (
         <div>
 

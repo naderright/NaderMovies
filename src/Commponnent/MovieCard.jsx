@@ -4,12 +4,12 @@ import React from 'react'
 import { FiPlayCircle } from "react-icons/fi";
 import profileImage from '../../public/profile.jpg'
 
-function MovieCard({ movie, key }) {
+function MovieCard({ movie}) {
 
   const typeMovie = getGenreNames(movie)
   // console.log(key);
   return (
-    <div className='pt-1 ' key={key} >
+    <div className='pt-1 '  >
       <div className="MovieCard bg-white   	" >
         <div className="group transition-all relative">
           <Image className='w-[100%] h-[100%]  hover:cursor-pointer' width={100} height={100} priority src={movie.poster_path ? startLinkImag + movie.poster_path : movie.profile_path ? startLinkImag + movie.profile_path : profileImage} alt={movie.name || movie.title} />
