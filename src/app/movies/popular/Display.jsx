@@ -2,7 +2,8 @@ import MovieCard from '@/Commponnent/MovieCard'
 import Link from 'next/link'
 import React from 'react'
 
-function Display({movies}) {
+async function Display({movies}) {
+
     // console.log(movies);
   return (
     <div>

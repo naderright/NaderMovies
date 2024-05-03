@@ -1,18 +1,19 @@
-import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext'
+ import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext'
 import React from 'react'
 import Display from './Display'
-import { useSearchParams } from 'next/navigation';
+import {  pageNumer } from '@/contextAPI/pageNumer';
+// import { useSearchParams } from 'next/navigation';
 
-async function TopRatedMovies() {
-  const page = useSearchParams().get('page'); 
-
-  const Movies = await getAllMovies('top_rated', !page?1:page)
+ const TopRatedMovies=async()=> {
+  // const page = useSearchParams().get('page'); 
+  const pageN= pageNumer();
+  const Movies = await getAllMovies('top_rated', !pageN?1:pageN)
 
   return (
     <div>
       <div className="movies mt-3">
         {/* display movies */}
-        <Display movies={Movies} />
+        <Display Movies={Movies} />
 
       </div>
     </div>

@@ -1,18 +1,20 @@
+
 import { getAllTV } from '@/contextAPI/ContextAPI/TvContext'
 import React from 'react'
 import Display from './Display'
-import { useSearchParams } from 'next/navigation';
+import {  pageNumer } from '@/contextAPI/pageNumer'
+// import { useSearchParams } from 'next/navigation';
 
-async function AiringToday() {
-  const page = useSearchParams().get('page'); 
-
-    const Movies = await getAllTV('airing_today', !page?1:page)
+ const AiringToday= async()=> {
+  // const page = useSearchParams().get('page'); 
+  const pageN= pageNumer();
+  const Movies = await getAllTV('airing_today', !pageN?1:pageN)
 
   return (
     <div>
       <div className="movies mt-3">
         {/* display movies */}
-        <Display movies={Movies} />
+        <Display Movies={Movies} />
 
       </div>
     </div>
