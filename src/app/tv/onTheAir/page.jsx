@@ -4,7 +4,6 @@ import Display from './Diasplay'
 import {  pageNumer } from '@/contextAPI/pageNumer';
 
  const OnTheAir= async()=> {
-  // const page = useSearchParams().get('page'); 
   const pageN= pageNumer();
   const Movies = await getAllTV('on_the_air', !pageN?1:pageN)
 
