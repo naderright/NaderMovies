@@ -6,7 +6,7 @@ import { pageNumer } from '@/contextAPI/pageNumer';
 
 const NowPlayingMovies = async () => {
     const pageN = pageNumer();
-    console.log(pageN);
+    // console.log(pageN);
     const Movies = await getAllMovies('now_playing', !pageN ? 1 : pageN)
 
 
