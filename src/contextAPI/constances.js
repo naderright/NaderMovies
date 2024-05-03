@@ -94,7 +94,7 @@ export  const getOptions = {
 
  export const getGenreNames = (movie)=>{
     const totalGenre = genres ;
-
+// get genre
     const genreNamesMovie = [];
     movie.genre_ids?.map((genreId)=>{
             totalGenre.map((genre)=>{
