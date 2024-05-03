@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import NavigationTypeMovie from './NavigationTypeMovie'
 import Pagination from '@/Commponnent/Pagination'
 
@@ -11,10 +11,12 @@ const typeTv = [
 function layout({ children }) {
     return (
         <div className='py-[1rem]  container'>
-             {/* navigation */}
+            {/* navigation */}
             <NavigationTypeMovie typeTv={typeTv} />
             {children}
-            <Pagination/>
+            <Suspense>
+                <Pagination />
+            </Suspense>
 
         </div>
     )
