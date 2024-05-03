@@ -3,17 +3,18 @@ import AiringToday from './airingToday/page'
 
 const TV = () => {
   return (
-    <div>
-      <div className='Movies '>
+    <Suspense>
+      <div>
+        <div className='Movies '>
 
-        {/* display TV */}
-        <Suspense>
+          {/* display TV */}
+
           <AiringToday />
-        </Suspense>
 
 
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 

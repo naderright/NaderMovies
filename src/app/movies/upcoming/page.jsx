@@ -9,15 +9,17 @@ const UpcomingMovies = async () => {
   const Movies = await getAllMovies('upcoming', !pageN ? 1 : pageN)
 
   return (
-    <div>
-      <div className="movies mt-3">
-        {/* display movies */}
-        <Suspense>
-          <Display Movies={Movies} />
-        </Suspense>
+    <Suspense>
+      <div>
+        <div className="movies mt-3">
+          {/* display movies */}
 
+          <Display Movies={Movies} />
+
+
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 

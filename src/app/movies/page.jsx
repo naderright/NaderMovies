@@ -8,14 +8,16 @@ const Movies = async () => {
   // }
   // console.log(Movies);
   return (
-    <div className='Movies '>
+    <Suspense>
+      <div className='Movies '>
 
-      {/* display movies */}
-      <Suspense>
+        {/* display movies */}
+
         <NowPlayingMovies />
-      </Suspense>
 
-    </div>
+
+      </div>
+    </Suspense>
   )
 }
 
