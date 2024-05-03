@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react'
 function Pagination() {
   const Router = useRouter();
   const page = useSearchParams().get('page');
-  const startAgin = useSearchParams().get('start');
   
   const [numberPage,setNumberPage] = useState(1);
   const [curruntPage,setCurruntPage] = useState(1);
@@ -31,7 +30,7 @@ const chansgeNextCurrentPage=()=>{
 
 
 useEffect(()=>{
-  if(!page ||startAgin){
+  if(!page ){
 
     Router.push(`?page=${1}`);
   }
