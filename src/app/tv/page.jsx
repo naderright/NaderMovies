@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import AiringToday from './airingToday/page'
 
 const TV = () => {
@@ -7,7 +7,10 @@ const TV = () => {
       <div className='Movies '>
 
         {/* display TV */}
-        <AiringToday />
+        <Suspense>
+          <AiringToday />
+        </Suspense>
+
 
       </div>
     </div>
