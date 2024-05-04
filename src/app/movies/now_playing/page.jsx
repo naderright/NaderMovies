@@ -1,5 +1,5 @@
 
-import React, { Suspense } from 'react'
+import React from 'react'
 import Display from './Display'
 import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext';
 import { pageNumer } from '@/contextAPI/pageNumer';

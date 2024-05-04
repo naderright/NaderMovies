@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Display from './Diasplay'
 import { getAllTV } from '@/contextAPI/ContextAPI/TvContext'
 import { pageNumer } from '@/contextAPI/pageNumer';

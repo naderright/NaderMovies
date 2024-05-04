@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import NowPlayingMovies from './now_playing/page'
 
 const Movies = async () => {
