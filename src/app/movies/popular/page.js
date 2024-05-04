@@ -8,7 +8,6 @@ const PopularMovies = async () => {
   const movies = await getAllMovies('popular', !pageN ? 1 : pageN);
 
   return (
-    <Suspense>
       <div>
         <div className="movies mt-3">
 
@@ -17,7 +16,6 @@ const PopularMovies = async () => {
 
         </div>
       </div>
-    </Suspense>
   )
 }
 

@@ -12,7 +12,6 @@ const NowPlayingMovies = async () => {
 
     // console.log(NumberPage);
     return (
-        <Suspense>
             <div>
 
                 <div className="movies mt-3">
@@ -23,7 +22,6 @@ const NowPlayingMovies = async () => {
 
                 </div>
             </div>
-        </Suspense>
     )
 }
 

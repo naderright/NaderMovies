@@ -8,7 +8,6 @@ const OnTheAir = async () => {
   const Movies = await getAllTV('on_the_air', !pageN ? 1 : pageN)
 
   return (
-    <Suspense>
       <div>
         <div className="movies mt-3">
           {/* display movies */}
@@ -18,7 +17,6 @@ const OnTheAir = async () => {
 
         </div>
       </div>
-    </Suspense>
   )
 }
 

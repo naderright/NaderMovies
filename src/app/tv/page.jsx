@@ -3,7 +3,6 @@ import AiringToday from './airingToday/page'
 
 const TV = () => {
   return (
-    <Suspense>
       <div>
         <div className='Movies '>
 
@@ -14,7 +13,6 @@ const TV = () => {
 
         </div>
       </div>
-    </Suspense>
   )
 }
 

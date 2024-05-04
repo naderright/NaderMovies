@@ -8,7 +8,6 @@ const Movies = async () => {
   // }
   // console.log(Movies);
   return (
-    <Suspense>
       <div className='Movies '>
 
         {/* display movies */}
@@ -17,7 +16,6 @@ const Movies = async () => {
 
 
       </div>
-    </Suspense>
   )
 }
 

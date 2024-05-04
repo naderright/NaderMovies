@@ -9,7 +9,6 @@ const AiringToday = async () => {
   const Movies = await getAllTV('airing_today', !pageN ? 1 : pageN)
 
   return (
-    <Suspense>
 
       <div>
         <div className="movies mt-3">
@@ -19,7 +18,6 @@ const AiringToday = async () => {
 
         </div>
       </div>
-    </Suspense>
   )
 }
 

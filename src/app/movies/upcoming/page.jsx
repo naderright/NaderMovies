@@ -9,7 +9,6 @@ const UpcomingMovies = async () => {
   const Movies = await getAllMovies('upcoming', !pageN ? 1 : pageN)
 
   return (
-    <Suspense>
       <div>
         <div className="movies mt-3">
           {/* display movies */}
@@ -19,7 +18,6 @@ const UpcomingMovies = async () => {
 
         </div>
       </div>
-    </Suspense>
   )
 }
 
