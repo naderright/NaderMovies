@@ -14,7 +14,7 @@ function layout({ children }) {
             {/* navigation */}
             <NavigationTypeMovie typeMovies={typeMovies} />
             {children}
-            <Suspense>
+            <Suspense fallback={children}>
                 <Pagination />
             </Suspense>
         </div>

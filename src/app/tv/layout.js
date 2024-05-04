@@ -14,7 +14,7 @@ function layout({ children }) {
             {/* navigation */}
             <NavigationTypeMovie typeTv={typeTv} />
             {children}
-            <Suspense>
+            <Suspense fallback={children }>
                 <Pagination />
             </Suspense>
 
