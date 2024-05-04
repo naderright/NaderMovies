@@ -12,16 +12,16 @@ const NowPlayingMovies = async () => {
 
     // console.log(NumberPage);
     return (
-            <div>
+        <div>
+            {pageN}
+            <div className="movies mt-3">
+                {/* display movies */}
 
-                <div className="movies mt-3">
-                    {/* display movies */}
-
-                    <Display Movies={Movies} />
+                <Display Movies={Movies} />
 
 
-                </div>
             </div>
+        </div>
     )
 }
 
