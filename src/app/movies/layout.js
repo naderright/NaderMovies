@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import NavigationTypeMovie from './NavigationTypeMovie'
 import Pagination from '@/Commponnent/Pagination'
+import { PageContextProvider } from '@/contextAPI/pageNumberContext'
 
 const typeMovies = [
     { name: 'Now Playing', router: 'now_playing' },
@@ -13,7 +14,10 @@ function layout({ children }) {
         <div className='py-[1rem]  container'>
             {/* navigation */}
             <NavigationTypeMovie typeMovies={typeMovies} />
-            {children}
+            <PageContextProvider>
+                {children}
+            </PageContextProvider>
+
             <Suspense fallback={children}>
                 <Pagination />
             </Suspense>
