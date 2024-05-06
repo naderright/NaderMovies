@@ -4,6 +4,7 @@ import React from 'react'
 
  function Display ({Movies}) {
 
+
     // console.log(movies);
   return (
     <div>
