@@ -1,13 +1,21 @@
-
+'use client'
 import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext'
-import React  from 'react'
+import React, { useContext, useEffect, useState }  from 'react'
 import Display from './Display'
-import { pageNumer } from '@/contextAPI/pageNumer';
+import { PageContext } from '@/contextAPI/pageNumberContext';
 
-const UpcomingMovies = async () => {
-  const pageN = pageNumer();
-  const Movies = await getAllMovies('upcoming', !pageN ? 1 : pageN)
-
+const UpcomingMovies =  () => {
+  const {pageN} = useContext(PageContext)
+  const [Movies,setMovies] = useState([])
+  const getMovies = async()=>{
+    const  movies = await getAllMovies('upcoming', !pageN ? 1 : pageN);
+    
+    return movies
+ }
+  
+ useEffect(()=>{
+     getMovies().then(value=>setMovies(value));       
+ },[pageN])
   return (
       <div>
         <div className="movies mt-3">

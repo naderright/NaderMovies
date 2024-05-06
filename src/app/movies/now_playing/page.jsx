@@ -9,15 +9,14 @@ const NowPlayingMovies =  () => {
 
   
      const {pageN} = useContext(PageContext)
+     const [Movies,setMovies] = useState([])
 
      const getMovies = async()=>{
         const  movies = await getAllMovies('now_playing', !pageN ? 1 : pageN);
         
         return movies
      }
-     const [Movies,setMovies] = useState([])
       
-       
      useEffect(()=>{
          getMovies().then(value=>setMovies(value));       
      },[pageN])

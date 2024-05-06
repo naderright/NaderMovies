@@ -6,6 +6,7 @@ import { getOptions } from "../constances";
 export const getAllMovies = async (type,page) => {
 
     try {
+        await new Promise((resolve)=>setTimeout(resolve,1000))
         const url = `https://api.themoviedb.org/3/movie/${type}?language=en-US&page=${page}`;
         const { data } = await axios(url, getOptions);
         return data.results

@@ -1,11 +1,21 @@
+'use client'
 import { getAllMovies } from '@/contextAPI/ContextAPI/MovieContext'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Display from './Display';
-import { pageNumer } from '@/contextAPI/pageNumer';
+import { PageContext } from '@/contextAPI/pageNumberContext';
 
-const PopularMovies = async () => {
-  const pageN = pageNumer();
-  const movies = await getAllMovies('popular', !pageN ? 1 : pageN);
+const PopularMovies =  () => {
+  const {pageN} = useContext(PageContext)
+  const [movies,setMovies] = useState([])
+  const getMovies = async()=>{
+    const  movies = await getAllMovies('popular', !pageN ? 1 : pageN).then(value=>setMovies(value));
+    
+    return movies
+ }
+  
+ useEffect(()=>{
+     getMovies();       
+ },[pageN])
 
   return (
       <div>
