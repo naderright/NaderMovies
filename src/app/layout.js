@@ -3,6 +3,7 @@ import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Commponnent/Header";
 import Footer from "../Commponnent/Footer";
+import UptoPAge from "@/Commponnent/UptoPAge";
 
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
             <body className={inter.className}>
               <Header />
               {children}
+              <UptoPAge/>
               <Footer />
             </body>
           </html>

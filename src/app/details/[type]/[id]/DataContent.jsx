@@ -10,9 +10,9 @@ function DataContent({ data }) {
 
     // console.log(data);
     return (
-        <div className='contentDetails text-secandry'>
+        <div className='contentDetails text-secandry px-[.1rem] m-auto md:m-0 md:px-0 '>
             <h3 className='font-bold text-[1.3rem]'>{data.title || data.name}</h3>
-            <p className='description font-extralight w-[22rem] text-[.9rem] py-2 '>{data.overview || data.biography}</p>
+            <p className='description font-extralight w-[15rem] md:w-[22rem] text-[.9rem] py-2 '>{data.overview || data.biography}</p>
             {/* rate */}
            {data.vote_avarage? <div className="rate my-3 flex items-center gap-2 pt-[.8rem]">
                 {mapStar.map((el,key) => <> <FaStar key={key} className='text-primary' />
