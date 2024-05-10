@@ -22,7 +22,7 @@ const UptoPAge = () => {
       }, [sticky])
   return (
     <div>
-      <div onClick={()=>MovieTopPage()} className={`UpToPage z-1 ${sticky?'flex':'d-non'}  justify-center items-center  
+      <div onClick={()=>MovieTopPage()} className={`UpToPage z-50 ${sticky?'flex':'d-non'}  justify-center items-center  
       hover:bg-secandry hover:scale-125 hover:cursor-pointer fixed bottom-3 
       right-3 w-7 h-9 rounded bg-primary text-white`}>
       <PiArrowFatLinesUpThin  className='text-[1.2rem]'/>
