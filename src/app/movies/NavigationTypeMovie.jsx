@@ -11,7 +11,7 @@ const NavigationTypeMovie = ({typeMovies}) => {
                 {typeMovies.map((type,key) => <Link key={key} href={`/movies/${type.router}`}><h3 
                 onClick={() =>{setDisplayType(type.name)}} 
                 className={`text-primary hover:cursor-pointer hover:text-secandry transition-all 
-                ${type.name == displayType ? 'border-b-[2px] border-b-primary' : ''} text-[.9rem]
+                ${type.name == displayType ? 'border-b-[2px] border-b-primary' : ''} text-[.7rem]
                  md:text-[1rem] font-semibold`} >{type.name}</h3></Link>)
                 }
             </div>
