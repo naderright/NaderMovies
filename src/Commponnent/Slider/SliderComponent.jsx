@@ -26,7 +26,7 @@ function Slider({ data }) {
         <div>
             {/* {console.log( 'dat'+ data)} */}
             <Swiper
-                slidesPerView={screnView < 600 ? 2 : screnView < 805 ? 3 : 4}
+                slidesPerView={screnView < 600 ? 2 : screnView < 805 ? 3 : 5}
                 spaceBetween={10}
                 freeMode={true}
                 navigation

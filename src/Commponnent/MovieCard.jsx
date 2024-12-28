@@ -12,7 +12,7 @@ function MovieCard({ movie}) {
     <div className='pt-1 '  >
       <div className="MovieCard bg-white   	" >
         <div className="group transition-all relative ">
-          <Image className=' rounded  hover:cursor-pointer' width={200} height={150} priority src={movie.poster_path ? startLinkImag + movie.poster_path : movie.profile_path ? startLinkImag + movie.profile_path : profileImage} alt={movie.name || movie.title} />
+          <Image className=' rounded  hover:cursor-pointer' width={250} height={150} priority src={movie.poster_path ? startLinkImag + movie.poster_path : movie.profile_path ? startLinkImag + movie.profile_path : profileImage} alt={movie.name || movie.title} />
           {/* layout Card */}
           <div className="layerCard text-primary hover:cursor-pointer flex items-center duration-700 justify-center overflow-hidden absolute
            bg-[rgba(0,0,0,0.47)] transition-all top-[100%] group-hover:top-0 bottom-0 right-0 left-0">
