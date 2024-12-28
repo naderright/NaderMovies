@@ -19,7 +19,7 @@ function MovieCard({ movie}) {
             <FiPlayCircle className='text-[3rem]' />
           </div>
         </div>
-        <div className=" px-3 titleMovie py-1 text-stone-950 font-[700] flex itmes-center justify-between gap-2">
+        <div className=" px-1 titleMovie py-1 text-stone-950 font-[700] flex itmes-center justify-between gap-2">
           <h3 className='truncate'>{movie.title || movie.name}</h3>
           <div className="rate pb-1 text-primary">
             {movie.vote_average ? <span className=' text-[.8rem] text-center text-primary border-primary border '>{(movie.vote_average / 2).toFixed(1)}</span>
