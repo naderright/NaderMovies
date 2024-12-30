@@ -5,8 +5,6 @@ import Header from "../Commponnent/Header";
 import Footer from "../Commponnent/Footer";
 import UptoPAge from "@/Commponnent/UptoPAge";
 import { ClerkProvider } from "@clerk/nextjs";
-import { IconBase } from "react-icons";
-
 
 
 
@@ -22,6 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+        <link rel="icon" href="/Move.ico" sizes="any" />
+
+        </head>
         <body className={inter.className}>
           <Header />
           {children}

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 const NavigationTypeMovie = ({typeMovies}) => {
     const [displayType, setDisplayType] = useState('Now Playing');
+    
 
     return (
         <div>
