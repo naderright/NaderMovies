@@ -20,10 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <head>
-        <link rel="icon" href="/Move.ico" sizes="any" />
-
-        </head>
+       
         <body className={inter.className}>
           <Header />
           {children}
