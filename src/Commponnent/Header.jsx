@@ -1,10 +1,13 @@
 "use client"
+import { useAuth } from '@clerk/clerk-react';
+import { useClerk } from '@clerk/nextjs';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { BsList } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { RiMovie2Line } from "react-icons/ri";
+import { ButtonSignOut } from './ButtonSignOut';
 
 
 
@@ -21,6 +24,10 @@ const Header = () => {
   const [sticky, setSticky] = useState(false);
   const getPathName = usePathname();
 
+  const { isSignedIn } = useAuth();
+  // console.log(auth);
+
+
   // console.log(getPathName.length);
   const chengeToggleMenu = () => {
 
@@ -36,7 +43,7 @@ const Header = () => {
 
   }, [sticky])
   return (
-    <header className={`${toggle == 'open' ? 'overflow-hidden' : ''} ${sticky || getPathName.length>1 ? 'bg-secandry' : 'bg-transparent'}  transition-all 
+    <header className={`${toggle == 'open' ? 'overflow-hidden' : ''} ${sticky || getPathName.length > 1 ? 'bg-secandry' : 'bg-transparent'}  transition-all 
     z-50 shadow-md fixed bor w-[100%]  flex justify-around items-center  text-white h-[3rem]`}>
       <div className={`logo text-primary font-black text-[1.2rem]`}>
         <Link href={'/'}>
@@ -46,17 +53,18 @@ const Header = () => {
       </div>
       {/* LINKS Movies And TV  */}
       <div className={`navLinks transition-all bg-secandry md:bg-transparent md:static absolute  top-[47px]  md:py-0 pt-[1rem] md:w-fit w-[100%]`}>
-        <ul className='md:flex md:flex-row flex flex-col items-center'>
-          {navLinks.map((navItem, key) => <Link key={key} onClick={chengeToggleMenu} className={navItem.name} href={navItem.display}> 
-          <li className={` transition-all w-[24rem] md:w-[100%] border-b-[.1px] border-primary md:border-none 
+        {isSignedIn && <ul className='md:flex md:flex-row flex flex-col items-center'>
+          {navLinks.map((navItem, key) => <Link key={key} onClick={chengeToggleMenu} className={navItem.name} href={navItem.display}>
+            <li className={` transition-all w-[24rem] md:w-[100%] border-b-[.1px] border-primary md:border-none 
           p-[.7rem] font-semibold hover:text-hover`} >
-            {navItem.name}
-          </li></Link>)}
-        </ul>
+              {navItem.name}
+            </li></Link>)}
+        </ul>}
+
       </div>
       {/* sign in button */}
       <div className="transition-all login text-end  md:text-center  bg-primary px-3 py-1  rounded hover:bg-hover hover:cursor-pointer font-bold">
-        <Link className='login font-normal text-[.8rem] tracking-[1px]' href='/login'>Sign In</Link>
+        {isSignedIn ? <ButtonSignOut /> : <Link className='login font-normal text-[.8rem] tracking-[1px]' href='/sign-in'>Sign In</Link>}
       </div>
 
       {/* toggle */}

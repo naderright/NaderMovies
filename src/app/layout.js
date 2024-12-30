@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Commponnent/Header";
 import Footer from "../Commponnent/Footer";
 import UptoPAge from "@/Commponnent/UptoPAge";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
@@ -17,17 +18,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    
-          <html lang="en">
-            <body className={inter.className}>
-              <Header />
-              {children}
-              <UptoPAge/>
-              <Footer />
-            </body>
-          </html>
-        
-     
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Header />
+          {children}
+          <UptoPAge />
+          <Footer />
+        </body>
+      </html>
+
+    </ClerkProvider>
 
   );
 }
